@@ -1,0 +1,13 @@
+.btnCluster {
+display: flex;
+justify-content:space-evenly;
+align-items:center;
+}
+
+button {
+color: blue;
+border-style: dotted;
+background-color: whitesmoke;
+border-color: black;
+padding: 20px;
+}

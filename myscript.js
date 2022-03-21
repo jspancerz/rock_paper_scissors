@@ -1,32 +1,37 @@
-//notes to self: game working correctly 'finally', now
-//i need to create a scoreboard that updates at the end of each round
-//ill do this by creating divs inside the html
-//ill then make the html elements into 'dom objects' by creating them inside my js file using let/const
-// i need to add some form of logic to the end of the game function that updates at the end of each round and reflects in the score
-// the score object will have to be updated on screen.
-//announce a winner (alert?) after a player has reached a total of 5 points.
+//note to self, to finish rps need to create alert after 5 wins declaring a victor (either cpu or human) this can be done with a formatted string ${}.
+//also need to fix css, indicate which score is which.
 
-///AFTER GAME IS DONE TRY MAKING SELECTION FOR PLAYER WITH SOLEY CLICKING ON BUTTON
+
+//AFTER GAME IS DONE//
+// TRY MAKING SELECTION FOR PLAYER WITH SOLEY CLICKING ON BUTTON
 //NO ""HARD CODING"" values into each button press.
+//Style it to make it more appealing (perhaps add some images that appear or disappear representing values)
+//make scoreboard a function that updates at the end of each round of play, which when scoreboard reaches 5 wins on either side declares a victor with a 'alert' function.
 
 //global variables 
-computerSelection = ['rock','paper','scissors']
+computerSelection = ['rock','paper','scissors'];
 let playerScore = 0;
 let computerScore = 0;
 
-//creates functional DOM objects to select.
+
+//creates functional DOM objects to manipulate
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const display = document.querySelector('.results');
+const human = document.querySelector('#playerScore');
+const cpu = document.querySelector('#computerScore');
+
+
 
 //logic for buttons when clicked.
-rock.addEventListener("click", function(e){
+rock.addEventListener("click", function(){
     game('rock');
 })
-paper.addEventListener("click", function(e){
+paper.addEventListener("click", function(){
     game('paper')
 })
-scissors.addEventListener("click", function(e){
+scissors.addEventListener("click", function(){
     game('scissors')
 })
 
@@ -34,27 +39,43 @@ scissors.addEventListener("click", function(e){
 function game(player){
         const computer = computerSelection[Math.floor(Math.random() * computerSelection.length)]
         if (player === computer) {
-            console.log('its a tie!')
+            display.textContent = 'this round is a tie.'
         }
         //if player beats computer
         else if (player === 'rock' && computer === 'scissors') {
-            console.log  ('you won! rock breaks scissors.') 
+            display.textContent = 'you won! rock breaks scissors.'
+            playerScore++
+            human.textContent = playerScore
         }   
         else if (player === 'paper' && computer === 'rock') {
-            console.log('you won! paper covers rock.') 
+            display.textContent = 'you won! paper covers rock.'
+            playerScore++
+            human.textContent = playerScore       
         }
         else if (player === 'scissors' && computer === 'paper') {
-            console.log('you won! scissors shreds paper.') 
+            display.textContent = 'you won! scissors shreds paper.'
+            playerScore++
+            human.textContent = playerScore 
         }
         //if computer beats player
         else if (player === 'paper' && computer === 'scissors') {
-            console.log('computer wins, scissors shreds paper.') 
+            display.textContent = 'you lost, scissors shreds paper.'
+            computerScore++
+            cpu.textContent = computerScore
         }
         else if (player === 'scissors' && computer === 'rock') {
-            console.log('computer wins, rock breaks scissors.') 
+            display.textContent = 'you lost, rock breaks scissors.'
+            computerScore++
+            cpu.textContent = computerScore
         }
         else if (player === 'rock' && computer === 'paper') {
-            console.log('computer wins, paper covers rock.') 
+            display.textContent = 'you lost, paper covers rock.'
+            computerScore++
+            cpu.textContent = computerScore
         }
         return;
     }
+
+// function runningScore(playerScore, computerScore){
+    
+// }

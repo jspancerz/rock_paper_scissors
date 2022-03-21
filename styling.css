@@ -1,13 +1,39 @@
-.btnCluster {
-display: flex;
-justify-content:space-evenly;
-align-items:center;
+body{
+    background-color: black;
+}
+
+.btnCluster{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
 }
 
 button {
-color: blue;
-border-style: dotted;
-background-color: whitesmoke;
-border-color: black;
-padding: 20px;
+    font-size: 30px;
+    color: darkred;
+    border-style:groove;
+    background-color: grey;
+    padding: 75px;
+    border-radius: 50px;
+    border-color: blue;
+    border-width: 10px;
+}
+
+.results {
+    display: flex;
+    font-size: 35px;
+    color: red;
+    justify-content: space-evenly;
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+    color: red;
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    margin-top: 15%;
 }

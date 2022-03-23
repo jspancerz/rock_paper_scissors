@@ -1,12 +1,3 @@
-
-
-//AFTER GAME IS DONE//
-//try using map for winning set combinations
-// TRY MAKING SELECTION FOR PLAYER WITH SOLEY CLICKING ON BUTTON
-//NO ""HARD CODING"" values into each button press.
-//Style it to make it more appealing (perhaps add some images that appear or disappear representing values)
-//make scoreboard a function that updates at the end of each round of play, which when scoreboard reaches 5 wins on either side declares a victor with a 'alert' function.
-
 //global variables 
 const computerSelection = ['rock','paper','scissors'];
 let playerScore = 0;
@@ -17,7 +8,7 @@ let computerScore = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-const display = document.querySelector('.results');
+const display = document.querySelector('#results');
 const human = document.querySelector('#playerScore');
 const cpu = document.querySelector('#computerScore');
 

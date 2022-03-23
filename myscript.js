@@ -1,15 +1,14 @@
-//note to self, to finish rps need to create alert after 5 wins declaring a victor (either cpu or human) this can be done with a formatted string ${}.
-//also need to fix css, indicate which score is which.
 
 
 //AFTER GAME IS DONE//
+//try using map for winning set combinations
 // TRY MAKING SELECTION FOR PLAYER WITH SOLEY CLICKING ON BUTTON
 //NO ""HARD CODING"" values into each button press.
 //Style it to make it more appealing (perhaps add some images that appear or disappear representing values)
 //make scoreboard a function that updates at the end of each round of play, which when scoreboard reaches 5 wins on either side declares a victor with a 'alert' function.
 
 //global variables 
-computerSelection = ['rock','paper','scissors'];
+const computerSelection = ['rock','paper','scissors'];
 let playerScore = 0;
 let computerScore = 0;
 
@@ -23,17 +22,17 @@ const human = document.querySelector('#playerScore');
 const cpu = document.querySelector('#computerScore');
 
 
-
 //logic for buttons when clicked.
 rock.addEventListener("click", function(){
     game('rock');
 })
 paper.addEventListener("click", function(){
-    game('paper')
+    game('paper');
 })
 scissors.addEventListener("click", function(){
-    game('scissors')
+    game('scissors');
 })
+
 
 //play a single round of RPS vs the computer.
 function game(player){
@@ -75,7 +74,3 @@ function game(player){
         }
         return;
     }
-
-// function runningScore(playerScore, computerScore){
-    
-// }
